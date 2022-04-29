@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rigidbody2D;
+    [SerializeField] Rigidbody2D playerRigidbody2D;
+    [SerializeField] Animator playerAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,15 @@ public class Player : MonoBehaviour
     {
         float movementLR = Input.GetAxis("Horizontal");
         float movementUD = Input.GetAxis("Vertical");
-        rigidbody2D.velocity = new Vector2(movementLR, movementUD);
-        
+        playerRigidbody2D.velocity = new Vector2(movementLR, movementUD);
+        playerAnimator.SetFloat("movementX", playerRigidbody2D.velocity.x);
+        playerAnimator.SetFloat("movementY", playerRigidbody2D.velocity.y);
+
+        if (movementUD == 1 || movementUD == -1 || movementLR == 1 || movementLR ==-1)
+        {
+            playerAnimator.SetFloat("lastX", movementLR);
+            playerAnimator.SetFloat("lastY", movementUD);
+        }
     }
+
 }
