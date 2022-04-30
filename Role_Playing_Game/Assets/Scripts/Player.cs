@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public string transitonName;
+
     public static Player instance;
+
     [SerializeField] Rigidbody2D playerRigidbody2D;
+
     [SerializeField] Animator playerAnimator;
+
     public float movementSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
