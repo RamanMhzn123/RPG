@@ -6,11 +6,11 @@ public class Player : MonoBehaviour
 {
     [SerializeField] Rigidbody2D playerRigidbody2D;
     [SerializeField] Animator playerAnimator;
-
+    public float movementSpeed;
     // Start is called before the first frame update
     void Start()
     {
-        
+        DontDestroyOnLoad(gameObject);  
     }
 
     // Update is called once per frame
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     {
         float movementLR = Input.GetAxis("Horizontal");
         float movementUD = Input.GetAxis("Vertical");
-        playerRigidbody2D.velocity = new Vector2(movementLR, movementUD);
+        playerRigidbody2D.velocity = new Vector2(movementLR, movementUD)*movementSpeed;
         playerAnimator.SetFloat("movementX", playerRigidbody2D.velocity.x);
         playerAnimator.SetFloat("movementY", playerRigidbody2D.velocity.y);
 
