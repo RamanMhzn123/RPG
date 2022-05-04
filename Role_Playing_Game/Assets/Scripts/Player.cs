@@ -22,8 +22,7 @@ public class Player : MonoBehaviour
             Destroy(this.gameObject);
         else
             instance = this;
-
-        DontDestroyOnLoad(gameObject);  
+        DontDestroyOnLoad(gameObject); 
     }
 
     // Update is called once per frame
@@ -31,6 +30,7 @@ public class Player : MonoBehaviour
     {
         float movementLR = Input.GetAxis("Horizontal");
         float movementUD = Input.GetAxis("Vertical");
+
         playerRigidbody2D.velocity = new Vector2(movementLR, movementUD)*movementSpeed;
         playerAnimator.SetFloat("movementX", playerRigidbody2D.velocity.x);
         playerAnimator.SetFloat("movementY", playerRigidbody2D.velocity.y);

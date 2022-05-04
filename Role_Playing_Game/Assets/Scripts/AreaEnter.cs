@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AreaEnter : MonoBehaviour
 {
-    [SerializeField] string transitonEnterName;
+    public string transitonEnterName;
 
     // Start is called before the first frame update
     void Start()
@@ -12,13 +12,11 @@ public class AreaEnter : MonoBehaviour
         if (transitonEnterName == Player.instance.transitonName)
         {
             Player.instance.transform.position = transform.position;
-
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
