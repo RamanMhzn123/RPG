@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour
 {
     private Vector3 bottomLeftEdge;
     private Vector3 topRightEdge;
-    [SerializeField] Tilemap tilemap; 
 
     public string transitonName;
     public static Player instance;
@@ -24,9 +22,6 @@ public class Player : MonoBehaviour
         else
             instance = this;
         DontDestroyOnLoad(gameObject);
-
-        bottomLeftEdge = tilemap.localBounds.min + new Vector3(1.0f, 1.0f, 0f);
-        topRightEdge = tilemap.localBounds.max + new Vector3(-1.0f, -1.0f, 0f); ;
     }
 
     // Update is called once per frame
@@ -51,6 +46,12 @@ public class Player : MonoBehaviour
             Mathf.Clamp(transform.position.y, bottomLeftEdge.y, topRightEdge.y),
             Mathf.Clamp(transform.position.z, bottomLeftEdge.z, topRightEdge.z)  
             );
+    }
+
+    public void SetLimit(Vector3 bottomEdgeToSet, Vector3 topEdgeToSet) 
+    {
+        bottomLeftEdge = bottomEdgeToSet;
+        topRightEdge = topEdgeToSet;
     }
 
 }

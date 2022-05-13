@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 500824593691184257}
   - component: {fileID: 500824593691184284}
   - component: {fileID: 500824593691184287}
-  - component: {fileID: 500824593691184285}
   - component: {fileID: 500824593691184282}
+  - component: {fileID: 500824593691184285}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -120,25 +120,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.23632896}
+  m_Offset: {x: 0, y: -0.3}
   serializedVersion: 2
-  m_Radius: 1.2068983
---- !u!114 &500824593691184285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500824593691184256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8f338afa6039254a8edd74ddf7f1058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transitonName: 
-  playerRigidbody2D: {fileID: 500824593691184284}
-  playerAnimator: {fileID: 500824593691184282}
-  movementSpeed: 10
+  m_Radius: 1.2
 --- !u!95 &500824593691184282
 Animator:
   serializedVersion: 3
@@ -158,3 +142,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &500824593691184285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500824593691184256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f338afa6039254a8edd74ddf7f1058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 0}
+  transitonName: 
+  playerRigidbody2D: {fileID: 500824593691184284}
+  playerAnimator: {fileID: 500824593691184282}
+  movementSpeed: 10
