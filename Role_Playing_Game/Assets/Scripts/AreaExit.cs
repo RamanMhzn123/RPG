@@ -5,21 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class AreaExit : MonoBehaviour
 {
-    //[SerializeField] AreaEnter areaEnter;
-
+    [SerializeField] AreaEnter areaEnter;
     [SerializeField] string transitonExitName;
-
     [SerializeField] int sceneToLoad;
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        //areaEnter.transitonEnterName = transitonExitName;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {   
+        areaEnter.transitonEnterName = transitonExitName;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,6 +20,7 @@ public class AreaExit : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Player.instance.transitonName = transitonExitName;
+            MenuManager.instance.FadeImage();        
             SceneManager.LoadScene(sceneToLoad);
         }
     }
